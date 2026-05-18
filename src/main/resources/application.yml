@@ -36,4 +36,16 @@ spring:
 #    reactor.netty: trace
 #    org.springframework.cloud.gateway: trace
 #    org.springframework.http.server.reactive: trace
+management:
+  health:
+    livenessstate:
+      enabled: true
+
+    readinessstate:
+      enabled: true
+
+  endpoint:
+    health:
+      probes:
+        enabled: true
 
