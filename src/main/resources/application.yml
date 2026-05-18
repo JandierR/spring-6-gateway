@@ -49,3 +49,7 @@ management:
       probes:
         enabled: true
 
+
+logging:
+  level:
+    org.zalando.logbook: trace
