@@ -13,7 +13,7 @@ spring:
           predicates:
             - Path=/api/v1/*/**
         - id: spring-6-reactive
-          uri: http://reactive:8080
+          uri: http://reactive:8082
           predicates:
             - Path=/api/v2/*
         - id: spring-6-reactive-mongo
