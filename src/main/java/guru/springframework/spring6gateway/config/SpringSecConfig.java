@@ -23,7 +23,9 @@ public class SpringSecConfig {
     }
 
     @Bean
+    @Order(2)
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+        
         http.authorizeExchange(authorizeExchangeSpec ->
                         authorizeExchangeSpec
                                 .pathMatchers("/oauth2/**", "/oauth2/token").permitAll()

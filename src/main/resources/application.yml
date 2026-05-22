@@ -7,7 +7,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: spring-6-rest-mvc
+        - id: spring-7-rest-mvc
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/*/**

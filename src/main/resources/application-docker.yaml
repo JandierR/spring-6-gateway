@@ -4,11 +4,12 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://auth-server:9000
+          
   cloud:
     gateway:
       routes:
-        - id: spring-6-rest-mvc
-          uri: http://rest-mvc:8080
+        - id: spring-7-rest-mvc
+          uri: http://rest-mvc:8081 #The problem I was having was because of this, I was using 8080 instead of 8081. (tomcat in rest-mvc started on 8081)
           predicates:
             - Path=/api/v1/*/**
         - id: spring-6-reactive
@@ -23,7 +24,7 @@ spring:
           uri: http://auth-server:9000
           predicates:
             - Path=/oauth2/**
-          filters:
-            - name: SetRequestHostHeader
-              args:
-                host: auth-server
+#          filters:
+#            - name: SetRequestHostHeader
+#              args:
+#                host: auth-server
