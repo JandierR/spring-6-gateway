@@ -9,15 +9,15 @@ spring:
     gateway:
       routes:
         - id: spring-7-rest-mvc
-          uri: http://rest-mvc:8081 #The problem I was having was because of this, I was using 8080 instead of 8081. (tomcat in rest-mvc started on 8081)
+          uri: http://rest-mvc:8080 #The problem I was having was because of this, I was using 8080 instead of 8081. (tomcat in rest-mvc started on 8081)
           predicates:
             - Path=/api/v1/*/**
         - id: spring-6-reactive
-          uri: http://reactive:8082
+          uri: http://reactive:8080
           predicates:
             - Path=/api/v2/*
         - id: spring-6-reactive-mongo
-          uri: http://reactive-mongo:8080
+          uri: http://reactive-mongo:8080 #Just in case -> I changed this port from 8083 to 8080 in the Reactive-mongo project
           predicates:
             - Path=/api/v3/*
         - id: spring-6-auth-server
